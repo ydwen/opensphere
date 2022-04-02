@@ -1,7 +1,7 @@
 
 
 <div align="center">
-  <img src="assets/opensphere_logo.png" width="500"/>
+  <img src="assets/opensphere_logo2.png" width="500"/>
 </div>
 
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-red.svg)](#python)
