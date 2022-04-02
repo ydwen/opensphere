@@ -1,0 +1,36 @@
+# yml for IJB-B and IJB-C
+project:
+  proj_dirs:
+  - project/20220312_134759
+data:
+  base:
+    dataset:
+      type: IJBDataset
+      test_mode: true
+      src_landmark:
+      - [38.2946, 51.6963]
+      - [73.5318, 51.5014]
+      - [56.0252, 71.7366]
+      - [41.5493, 92.3655]
+      - [70.7299, 92.2041]
+    dataloader:
+      type: DataLoader
+      batch_size: 256
+      shuffle: false
+      drop_last: false
+      num_workers: 16
+  test:
+  - dataset:
+      name: IJB-B
+      data_dir: data/test/IJB-B/loose_crop
+      meta_dir: data/test/IJB-B/meta
+      data_ann_file: ijbb_name_5pts_score.txt
+      tmpl_ann_file: ijbb_face_tid_mid.txt
+      gallery_ann_files:
+      - ijbb_1N_gallery_S1.csv
+      - ijbb_1N_gallery_S2.csv
+      probe_ann_files:
+      - ijbb_1N_probe_mixed.csv
+      pair_ann_file: ijbb_template_pair_label.txt
+parallel:
+  device_ids: [0, 1, 2, 3]

@@ -1,0 +1,24 @@
+# yml for combined validation datasets
+project:
+  proj_dirs:
+  - project/20220312_134759
+data:
+  test:
+  - dataset:
+      type: PairDataset
+      name: Combined
+      data_dir: data/val/
+      ann_path: data/val/combined_ann.txt
+      test_mode: true
+      metrics:
+      - ACC
+      - EER
+      - AUC
+    dataloader:
+      type: DataLoader
+      batch_size: 256
+      shuffle: false
+      drop_last: false
+      num_workers: 4
+parallel:
+  device_ids: [0, 1]
