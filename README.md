@@ -1,7 +1,6 @@
 
-
 <div align="center">
-  <img src="assets/opensphere_logo2.png" width="500"/>
+  <img src="assets/opensphere_logo2.png" width="600"/>
 </div>
 
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-red.svg)](#python)
@@ -16,10 +15,13 @@
 
 <details open>
 <summary>Support Projects</summary>
+	
 
-- **SphereFace2: Binary Classification is All You Need for Deep Face Recognition**
+- [x] **SphereFace**: Deep Hypersphere Embedding for Face Recognition, *CVPR 2017* </li>
 
-- **SphereFace Revived: Unifying Hyperspherical Face Recognition** (todo)
+- [x] **SphereFace2**: Binary Classification is All You Need for Deep Face Recognition, *ICLR 2022* </li>
+
+- [ ] **SphereFace Revived**: Unifying Hyperspherical Face Recognition, *TPAMI 2022* </li>
   
 </details>
 
@@ -42,7 +44,7 @@
     conda env create -f environment.yml
     ```
 
-## Usage
+## Getting started
 **Note:** In this part, we assume you are in the directory **`$OPENSPHERE_ROOT`**
 *After successfully completing the [Setup](#setup)*, you are ready to run all the following experiments.
 
