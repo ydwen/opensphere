@@ -50,7 +50,8 @@
 *After successfully completing the [Setup](#setup)*, you are ready to run all the following experiments.
 
 1. Datasets
-Download the training set (`VGGFace2`), validation set (`LFW`, `Age-DB`, `CA-LFW`, `CP-LFW`), and test set (`IJB-B` and `IJB-C`) and place them in **`../data/`**.
+
+	Download the training set (`VGGFace2`), validation set (`LFW`, `Age-DB`, `CA-LFW`, `CP-LFW`), and test set (`IJB-B` and `IJB-C`) and place them in **`../data/`**.
 
 	```Shell
 	tar xvf ../data/vggface2.tar -C ../data/ 
@@ -65,13 +66,22 @@ Download the training set (`VGGFace2`), validation set (`LFW`, `Age-DB`, `CA-LFW
 	```
 
 
-2. Train
+2. Training a model (see the training config file for detailed setup)
+
+  - To train SphereFace2, run the following commend:
 
 	```Shell
 	CUDA_VISIBLE_DEVICES=0,1 python train.py --config config/papers/SphereFace2/sec41/vggface2_sfnet20_sphereface2.yml
 	```
 
-3. Test
+  - To train SphereFace, run the following commend:
+
+	```Shell
+	CUDA_VISIBLE_DEVICES=0,1 python train.py --config config/papers/SphereFace2/sec41/vggface2_sfnet20_sphereface.yml
+	```
+
+3. Testing a model (see the testing config file for detailed setup)
+
 	```Shell
 	CUDA_VISIBLE_DEVICES=0,1 python test.py --config config/test/ijbb.yml
 	```
