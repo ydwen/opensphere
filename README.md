@@ -5,10 +5,10 @@
 </div>
 
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-red.svg)](#python)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![made-with-pytorch](https://img.shields.io/badge/Make%20with-Pytorch-brightgreen)](https://pytorch.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-**OpenSphere** is a hyperspherical face recognition library based on PyTorch. The project page is available [here](https://opensphere.world/).
+**OpenSphere** is a hyperspherical face recognition library based on PyTorch. See the [project homepage](https://opensphere.world/).
 
 ## Introduction
 **OpenSphere** provides a consistent and unified training and evaluation framework for hyperspherical face recognition research. The framework decouples the loss function from the other varying components such as network architecture, optimizer, and data augmentation. It can fairly compare different loss functions in hyperspherical face recognition on popular benchmarks, serving as a transparaent platform to reproduce published results.
