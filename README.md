@@ -15,7 +15,7 @@
 
 
 <details open>
-<summary>Support Projects</summary>
+<summary>Supported Projects</summary>
 	
 
 - [x] **SphereFace**: Deep Hypersphere Embedding for Face Recognition, *CVPR 2017* </li>
