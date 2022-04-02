@@ -2,6 +2,7 @@
 <div align="center">
   <img src="assets/opensphere_logo2.png" width="600"/>
 </div>
+&nbsp;
 
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-red.svg)](#python)
 [![made-with-pytorch](https://img.shields.io/badge/Made%20with-Pytorch-brightgreen)](https://pytorch.org/)
