@@ -2,8 +2,14 @@
   <img src="assets/opensphere_logo.png" width="500"/>
 </div>
 
+[![made-with-python](https://img.shields.io/badge/Made%20with-Python-red.svg)](#python)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![made-with-pytorch](https://img.shields.io/badge/Make%20with-Pytorch-brightgreen)](https://pytorch.org/)
+
+**OpenSphere** is an easy-to-use hyperspherical face recognition library based on PyTorch. The project page is available [here](https://opensphere.world/).
+
 ## Introduction
-OpenSphere is an open source face recognition toolbox based on PyTorch.
+**OpenSphere** provides a consistent and unified training and evaluation framework for hyperspherical face recognition research. The framework decouples the loss function from the other varying components such as network architecture, optimizer, and data augmentation. It can fairly compare different loss functions in hyperspherical face recognition on popular benchmarks, serving as a transparaent platform to reproduce published results.
 
 
 <details open>
@@ -14,10 +20,6 @@ OpenSphere is an open source face recognition toolbox based on PyTorch.
 - **SphereFace Revived: Unifying Hyperspherical Face Recognition** (todo)
   
 </details>
-
-
-## License
-OpenSphere is released under the [MIT license](LICENSE).
 
 
 
@@ -73,6 +75,25 @@ Download the training set (`VGGFace2`), validation set (`LFW`, `Age-DB`, `CA-LFW
 ## Citation
 
 If you find **OpenSphere** useful in your research, please consider to cite:
+
+For **SphereFace**:
+
+  	@article{Liu2022SphereFaceR,
+	  title={SphereFace Revived: Unifying Hyperspherical Face Recognition},
+	  author={Liu, Weiyang and Wen, Yandong and Raj, Bhiksha and Singh, Rita and Weller, Adrian},
+	  journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
+	  year={2022}
+	}
+	
+	@InProceedings{Liu2017CVPR,
+	  title = {SphereFace: Deep Hypersphere Embedding for Face Recognition},
+	  author = {Liu, Weiyang and Wen, Yandong and Yu, Zhiding and Li, Ming and Raj, Bhiksha and Song, Le},
+	  booktitle = {CVPR},
+	  year = {2017}
+	}
+	
+      
+For **SphereFace2**:
   
 	@article{wen2021sphereface2,
 	  title = {SphereFace2: Binary Classification is All You Need for Deep Face Recognition},
@@ -80,6 +101,8 @@ If you find **OpenSphere** useful in your research, please consider to cite:
 	  booktitle = {arXiv preprint arXiv:2108.01513},
 	  year = {2021}
 	}
+	
+	
 
 ## Contact
 
