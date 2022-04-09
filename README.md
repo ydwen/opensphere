@@ -51,33 +51,27 @@
 
 1. Datasets
 
-	Download the training set (`VGGFace2`), validation set (`LFW`, `Age-DB`, `CA-LFW`, `CP-LFW`), and test set (`IJB-B` and `IJB-C`) and place them in **`../data/`**.
+	Download the training set (`VGGFace2`), validation set (`LFW`, `Age-DB`, `CA-LFW`, `CP-LFW`), and test set (`IJB-B` and `IJB-C`) and place them in **`data/train`**, **`data/val`** amd **`data/test`**, respectively.
+	
+  - For convenience, we provide a script to automatically download the data. Simply run
 
 	```Shell
-	tar xvf ../data/vggface2.tar -C ../data/ 
-	```
-  
-	```Shell
-	tar xvf ../data/validation.tar -C ../data/ 
-	```
-  
-	```Shell
-	tar xvf ../data/IJB.tar -C ../data/
+	bash scripts/dataset_setup.sh
 	```
 
 
 2. Training a model (see the training config file for detailed setup)
 
-  - To train SphereFace2, run the following commend:
+  - To train SphereFace2 with SFNet-20 on VGGFace2, run the following commend:
 
 	```Shell
-	CUDA_VISIBLE_DEVICES=0,1 python train.py --config config/papers/SphereFace2/sec41/vggface2_sfnet20_sphereface2.yml
+	CUDA_VISIBLE_DEVICES=0,1 python train.py --config config/train/vggface2_sfnet20_sphereface2.yml
 	```
 
-  - To train SphereFace, run the following commend:
+  - To train SphereFace with SFNet-20 on VGGFace2, run the following commend:
 
 	```Shell
-	CUDA_VISIBLE_DEVICES=0,1 python train.py --config config/papers/SphereFace2/sec41/vggface2_sfnet20_sphereface.yml
+	CUDA_VISIBLE_DEVICES=0,1 python train.py --config config/train/vggface2_sfnet20_sphereface.yml
 	```
 
 3. Testing a model (see the testing config file for detailed setup)
