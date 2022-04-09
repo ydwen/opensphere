@@ -51,8 +51,7 @@
     ```
 
 ## Get started
-**Note:** In this part, we assume you are in the directory **`$OPENSPHERE_ROOT`**
-After successfully completing the [Setup](#setup), you are ready to run all the following experiments.
+**Note:** In this part, we assume you are in the directory **`$OPENSPHERE_ROOT`**. After successfully completing the [Setup](#setup), you are ready to run all the following experiments.
 
 1. Datasets
 
@@ -78,6 +77,8 @@ After successfully completing the [Setup](#setup), you are ready to run all the 
 	```console
 	CUDA_VISIBLE_DEVICES=0,1 python train.py --config config/train/vggface2_sfnet20_sphereface.yml
 	```
+	
+  - Our framework also re-implements some other popular hyperspherical face recognition methods such as ArcFace, AM-Softmax (CosFace) and CocoLoss (NormFace). Please check out the folder `model/head` and some examplar config files in `config/papers/SphereFace2/sec31`
 
 3. Test a model (see the testing config file for detailed setup)
 
