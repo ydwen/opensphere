@@ -34,19 +34,19 @@
 
 
 ## Setup (with [Anaconda](https://www.anaconda.com/))
-1. Clone the OpenSphere repository. We'll call the directory that you cloned OpenSphere as **`OPENSPHERE_ROOT`**.
+1. Clone the OpenSphere repository. We'll call the directory that you cloned OpenSphere as **`$OPENSPHERE_ROOT`**.
 
-    ```Shell
+    ```console
     git clone https://github.com/ydwen/opensphere.git
     ```
 
 2. Construct virtual environment in Anaconda
 
-    ```Shell
+    ```console
     conda env create -f environment.yml
     ```
 
-## Getting started
+## Get started
 **Note:** In this part, we assume you are in the directory **`$OPENSPHERE_ROOT`**
 *After successfully completing the [Setup](#setup)*, you are ready to run all the following experiments.
 
@@ -56,30 +56,36 @@
 	
   - For convenience, we provide a script to automatically download the data. Simply run
 
-	```Shell
+	```console
 	bash scripts/dataset_setup.sh
 	```
 
 
-2. Training a model (see the training config file for detailed setup)
+2. Training a model (see the training config file for the detailed setup)
 
   - To train SphereFace2 with SFNet-20 on VGGFace2, run the following commend:
 
-	```Shell
+	```console
 	CUDA_VISIBLE_DEVICES=0,1 python train.py --config config/train/vggface2_sfnet20_sphereface2.yml
 	```
 
   - To train SphereFace with SFNet-20 on VGGFace2, run the following commend:
 
-	```Shell
+	```console
 	CUDA_VISIBLE_DEVICES=0,1 python train.py --config config/train/vggface2_sfnet20_sphereface.yml
 	```
 
-3. Testing a model (see the testing config file for detailed setup)
+3. Test a model (see the testing config file for detailed setup)
 
-	```Shell
+	```console
 	CUDA_VISIBLE_DEVICES=0,1 python test.py --config config/test/ijbb.yml
 	```
+
+## Reproduce published results
+
+  - We create an additional folder `config/papers` that is used to provide detailed config files and reproduce results in published papers. Currently we provide config files for the following papers:
+  
+  	- SphereFace2: Binary Classification is All You Need for Deep Face Recognition, ICLR 2022
 
 
 ## Citation
