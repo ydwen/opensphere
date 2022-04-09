@@ -30,6 +30,7 @@
 
 ## Update
 - **2022.4.1**: initial commit.
+- **2022.4.9**: added the download script for some datasets.
 
 
 ## Setup (with [Anaconda](https://www.anaconda.com/))
