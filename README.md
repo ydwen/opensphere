@@ -48,7 +48,7 @@
 
 ## Get started
 **Note:** In this part, we assume you are in the directory **`$OPENSPHERE_ROOT`**
-*After successfully completing the [Setup](#setup)*, you are ready to run all the following experiments.
+After successfully completing the [Setup](#setup), you are ready to run all the following experiments.
 
 1. Datasets
 
