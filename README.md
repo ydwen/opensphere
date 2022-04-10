@@ -41,7 +41,7 @@
 
 
 ## Setup
-1. Clone the OpenSphere repository. We'll call the directory that you cloned OpenSphere as **`$OPENSPHERE_ROOT`**.
+1. Clone the OpenSphere repository. We'll call the directory that you cloned OpenSphere as `$OPENSPHERE_ROOT`.
 
     ```console
     git clone https://github.com/ydwen/opensphere.git
@@ -54,11 +54,11 @@
     ```
 
 ## Get started
-**Note:** In this part, we assume you are in the directory **`$OPENSPHERE_ROOT`**. After successfully completing the [Setup](#setup), you are ready to run all the following experiments.
+In this part, we assume you are in the directory `$OPENSPHERE_ROOT`. After successfully completing the [Setup](#setup), you are ready to run all the following experiments.
 
-1. Download and process the datasets
+1. **Download and process the datasets**
 
-  - Download the training set (`VGGFace2`), validation set (`LFW`, `Age-DB`, `CA-LFW`, `CP-LFW`), and test set (`IJB-B` and `IJB-C`) and place them in **`data/train`**, **`data/val`** amd **`data/test`**, respectively.
+  - Download the training set (`VGGFace2`), validation set (`LFW`, `Age-DB`, `CA-LFW`, `CP-LFW`), and test set (`IJB-B` and `IJB-C`) and place them in `data/train`, `data/val` amd `data/test`, respectively.
 	
   - For convenience, we provide a script to automatically download the data. Simply run
 
@@ -67,7 +67,7 @@
 	```
 
 
-2. Training a model (see the training config file for the detailed setup)
+2. **Training a model (see the training config file for the detailed setup)**
 
   - To train SphereFace2 with SFNet-20 on VGGFace2, run the following commend:
 
@@ -83,7 +83,7 @@
 	
   - Our framework also re-implements some other popular hyperspherical face recognition methods such as ArcFace, AM-Softmax (CosFace) and CocoLoss (NormFace). Please check out the folder `model/head` and some examplar config files in the folder `config/papers/SphereFace2/sec31`.
 
-3. Test a model (see the testing config file for detailed setup)
+3. **Test a model (see the testing config file for detailed setup)**
 
 	```console
 	CUDA_VISIBLE_DEVICES=0,1 python test.py --config config/test/ijbb.yml
@@ -91,9 +91,9 @@
 
 ## Reproduce published results
 
-  - We create an additional folder `config/papers` that is used to provide detailed config files and reproduce results in published papers. Currently we provide config files for the following papers:
+We create an additional folder `config/papers` that is used to provide detailed config files and reproduce results in published papers. Currently we provide config files for the following papers:
   
-  	- SphereFace2: Binary Classification is All You Need for Deep Face Recognition, ICLR 2022
+  - SphereFace2: Binary Classification is All You Need for Deep Face Recognition, ICLR 2022
 
 
 ## Citation
