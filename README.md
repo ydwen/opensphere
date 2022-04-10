@@ -56,7 +56,7 @@
 ## Get started
 **Note:** In this part, we assume you are in the directory **`$OPENSPHERE_ROOT`**. After successfully completing the [Setup](#setup), you are ready to run all the following experiments.
 
-1. Dataset Processing
+1. Download and Process the Datasets
 
   - Download the training set (`VGGFace2`), validation set (`LFW`, `Age-DB`, `CA-LFW`, `CP-LFW`), and test set (`IJB-B` and `IJB-C`) and place them in **`data/train`**, **`data/val`** amd **`data/test`**, respectively.
 	
