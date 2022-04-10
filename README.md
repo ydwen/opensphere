@@ -47,7 +47,7 @@
     git clone https://github.com/ydwen/opensphere.git
     ```
 
-2. Construct virtual environment in ([Anaconda](https://www.anaconda.com/)):
+2. Construct virtual environment in [Anaconda](https://www.anaconda.com/):
 
     ```console
     conda env create -f environment.yml
