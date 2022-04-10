@@ -109,7 +109,7 @@ For **SphereFace**:
 	  year={2022}
 	}
 	
-	@InProceedings{Liu2017CVPR,
+	@InProceedings{Liu2017SphereFace,
 	  title = {SphereFace: Deep Hypersphere Embedding for Face Recognition},
 	  author = {Liu, Weiyang and Wen, Yandong and Yu, Zhiding and Li, Ming and Raj, Bhiksha and Song, Le},
 	  booktitle = {CVPR},
@@ -119,11 +119,11 @@ For **SphereFace**:
       
 For **SphereFace2**:
   
-	@article{wen2021sphereface2,
+	@InProceedings{wen2021sphereface2,
 	  title = {SphereFace2: Binary Classification is All You Need for Deep Face Recognition},
 	  author = {Wen, Yandong and Liu, Weiyang and Weller, Adrian and Raj, Bhiksha and Singh, Rita},
-	  booktitle = {arXiv preprint arXiv:2108.01513},
-	  year = {2021}
+	  booktitle = {ICLR},
+	  year = {2022}
 	}
 	
 	
