@@ -102,29 +102,32 @@ If you find **OpenSphere** useful in your research, please consider to cite:
 
 For **SphereFace**:
 
-  	@article{Liu2022SphereFaceR,
-	  title={SphereFace Revived: Unifying Hyperspherical Face Recognition},
-	  author={Liu, Weiyang and Wen, Yandong and Raj, Bhiksha and Singh, Rita and Weller, Adrian},
-	  journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
-	  year={2022}
-	}
+  ```bibtex
+  @article{Liu2022SphereFaceR,
+	title={SphereFace Revived: Unifying Hyperspherical Face Recognition},
+	author={Liu, Weiyang and Wen, Yandong and Raj, Bhiksha and Singh, Rita and Weller, Adrian},
+	journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
+	year={2022}
+  }
 	
-	@InProceedings{Liu2017SphereFace,
-	  title = {SphereFace: Deep Hypersphere Embedding for Face Recognition},
-	  author = {Liu, Weiyang and Wen, Yandong and Yu, Zhiding and Li, Ming and Raj, Bhiksha and Song, Le},
-	  booktitle = {CVPR},
-	  year = {2017}
-	}
-	
+  @InProceedings{Liu2017SphereFace,
+	title = {SphereFace: Deep Hypersphere Embedding for Face Recognition},
+	author = {Liu, Weiyang and Wen, Yandong and Yu, Zhiding and Li, Ming and Raj, Bhiksha and Song, Le},
+	booktitle = {CVPR},
+	year = {2017}
+  }
+  ```
       
 For **SphereFace2**:
-  
-	@InProceedings{wen2021sphereface2,
-	  title = {SphereFace2: Binary Classification is All You Need for Deep Face Recognition},
-	  author = {Wen, Yandong and Liu, Weiyang and Weller, Adrian and Raj, Bhiksha and Singh, Rita},
-	  booktitle = {ICLR},
-	  year = {2022}
-	}
+
+  ```bibtex
+  @InProceedings{wen2021sphereface2,
+	title = {SphereFace2: Binary Classification is All You Need for Deep Face Recognition},
+	author = {Wen, Yandong and Liu, Weiyang and Weller, Adrian and Raj, Bhiksha and Singh, Rita},
+	booktitle = {ICLR},
+	year = {2022}
+  }
+  ```
 	
 	
 
