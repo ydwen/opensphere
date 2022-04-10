@@ -25,11 +25,11 @@
 <summary>Supported Projects</summary>
 	
 
-- [x] **SphereFace**: Deep Hypersphere Embedding for Face Recognition, *CVPR 2017* </li>
+- [x] [**SphereFace**: Deep Hypersphere Embedding for Face Recognition](https://wyliu.com/papers/LiuCVPR17v3.pdf), *CVPR 2017*</li>
 
-- [x] **SphereFace2**: Binary Classification is All You Need for Deep Face Recognition, *ICLR 2022* </li>
+- [x] [**SphereFace2**: Binary Classification is All You Need for Deep Face Recognition](https://wyliu.com/papers/sphereface2_ICLR22.pdf), *ICLR 2022* </li>
 
-- [ ] **SphereFace Revived**: Unifying Hyperspherical Face Recognition, *TPAMI 2022* </li>
+- [ ] [**SphereFace Revived**: Unifying Hyperspherical Face Recognition](https://wyliu.com/papers/spherefacer_v3_TPAMI.pdf), *TPAMI 2022* </li>
 
 </details>
 
