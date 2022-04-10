@@ -19,7 +19,7 @@
 
 
 <!-- TABLE OF CONTENTS -->
-***Table of Contents***: - <a href="#update">Update</a> - <a href="#setup">Setup</a> - <a href="#get-started">Get starteds</a> - <a href="#citation">Citation</a> - <a href="#contact">Contact</a> - 
+***Table of Contents***: - <a href="#update">Update</a> - <a href="#setup">Setup</a> - <a href="#get-started">Get started</a> - <a href="#reproduce-published-results">Reproducible Results</a> - <a href="#citation">Citation</a> - <a href="#contact">Contact</a> - 
 
 <details open>
 <summary>Supported Projects</summary>
