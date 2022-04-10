@@ -18,6 +18,9 @@
 **OpenSphere** provides a consistent and unified training and evaluation framework for hyperspherical face recognition research. The framework decouples the loss function from the other varying components such as network architecture, optimizer, and data augmentation. It can fairly compare different loss functions in hyperspherical face recognition on popular benchmarks, serving as a transparaent platform to reproduce published results.
 
 
+<!-- TABLE OF CONTENTS -->
+***Table of Contents***: - <a href="#update">Update</a> - <a href="#setup">Setup</a> - <a href="#get-started">Get starteds</a> - <a href="#citation">Citation</a> - <a href="#contact">Contact</a> - 
+
 <details open>
 <summary>Supported Projects</summary>
 	
@@ -27,7 +30,7 @@
 - [x] **SphereFace2**: Binary Classification is All You Need for Deep Face Recognition, *ICLR 2022* </li>
 
 - [ ] **SphereFace Revived**: Unifying Hyperspherical Face Recognition, *TPAMI 2022* </li>
-  
+
 </details>
 
 
@@ -37,14 +40,14 @@
 - **2022.4.9**: added the download script for some datasets.
 
 
-## Setup (with [Anaconda](https://www.anaconda.com/))
+## Setup
 1. Clone the OpenSphere repository. We'll call the directory that you cloned OpenSphere as **`$OPENSPHERE_ROOT`**.
 
     ```console
     git clone https://github.com/ydwen/opensphere.git
     ```
 
-2. Construct virtual environment in Anaconda
+2. Construct virtual environment in ([Anaconda](https://www.anaconda.com/)):
 
     ```console
     conda env create -f environment.yml
@@ -53,9 +56,9 @@
 ## Get started
 **Note:** In this part, we assume you are in the directory **`$OPENSPHERE_ROOT`**. After successfully completing the [Setup](#setup), you are ready to run all the following experiments.
 
-1. Datasets
+1. Dataset Processing
 
-	Download the training set (`VGGFace2`), validation set (`LFW`, `Age-DB`, `CA-LFW`, `CP-LFW`), and test set (`IJB-B` and `IJB-C`) and place them in **`data/train`**, **`data/val`** amd **`data/test`**, respectively.
+  - Download the training set (`VGGFace2`), validation set (`LFW`, `Age-DB`, `CA-LFW`, `CP-LFW`), and test set (`IJB-B` and `IJB-C`) and place them in **`data/train`**, **`data/val`** amd **`data/test`**, respectively.
 	
   - For convenience, we provide a script to automatically download the data. Simply run
 
