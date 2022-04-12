@@ -37,7 +37,7 @@
 ## Update
 - **2022.4.1**: initial commit.
 - **2022.4.9**: added the download script for some datasets.
-- **2022.4.9**: added SF-Net and IResNet.
+- **2022.4.12**: added SF-Net and IResNet.
 
 
 ## Key Features
