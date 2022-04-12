@@ -37,12 +37,13 @@
 ## Update
 - **2022.4.1**: initial commit.
 - **2022.4.9**: added the download script for some datasets.
+- **2022.4.9**: added SF-Net and IResNet.
 
 
 ## Key Features
-- **Implemented loss functions** ([folder](https://github.com/ydwen/opensphere/tree/main/model/head)): [SphereFace](https://wyliu.com/papers/LiuCVPR17v3.pdf), [SphereFace2](https://wyliu.com/papers/sphereface2_ICLR22.pdf), [ArcFace](https://arxiv.org/pdf/1801.07698.pdf), [AM-Softmax](https://arxiv.org/pdf/1801.05599.pdf) ([CosFace](https://arxiv.org/pdf/1801.09414.pdf)), [CocoLoss](https://arxiv.org/pdf/1710.00870.pdf) ([NormFace](https://arxiv.org/pdf/1704.06369.pdf))
+- **Implemented loss functions**: [SphereFace](https://wyliu.com/papers/LiuCVPR17v3.pdf), [SphereFace2](https://wyliu.com/papers/sphereface2_ICLR22.pdf), [ArcFace](https://arxiv.org/pdf/1801.07698.pdf), [AM-Softmax](https://arxiv.org/pdf/1801.05599.pdf) ([CosFace](https://arxiv.org/pdf/1801.09414.pdf)), [CocoLoss](https://arxiv.org/pdf/1710.00870.pdf) ([NormFace](https://arxiv.org/pdf/1704.06369.pdf))
 
-- **Implemented network architectures** ([folder](https://github.com/ydwen/opensphere/tree/main/model/backbone)): [SFNet (without Batch Norm)](https://wyliu.com/papers/LiuCVPR17v3.pdf), [SFNet (with Batch Norm)](https://wyliu.com/papers/spherefacer_v3_TPAMI.pdf), [IResNet](https://openaccess.thecvf.com/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf)
+- **Implemented network architectures**: [SFNet (without Batch Norm)](https://wyliu.com/papers/LiuCVPR17v3.pdf), [SFNet (with Batch Norm)](https://wyliu.com/papers/spherefacer_v3_TPAMI.pdf), [IResNet](https://openaccess.thecvf.com/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf)
 
 - **TODO**: [SphereFace-R](https://wyliu.com/papers/spherefacer_v3_TPAMI.pdf) and more examplar config files
 
