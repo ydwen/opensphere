@@ -1,4 +1,4 @@
-## How to customize your config files
+## How to use config files
 
 ### Training config
 
@@ -27,3 +27,6 @@ For example, simply run the following commend to test a trained model (saved in 
 ```console
 CUDA_VISIBLE_DEVICES=0,1 python train.py --config config/test/ijbb.yml --proj_dir project/20220422_031705
 ```
+### Customize config files
+
+Please take a look at the examples given in `config/train` and `config/test`.
