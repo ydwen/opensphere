@@ -104,7 +104,9 @@ In this part, we assume you are in the directory `$OPENSPHERE_ROOT`. After succe
 	```console
 	CUDA_VISIBLE_DEVICES=0,1 python train.py --config config/train/vggface2_sfnet20_sphereface.yml
 	```
-	
+
+  - After finishing training a model, you will see a `project` folder under `$OPENSPHERE_ROOT`. The trained model is saved in the folder named by the job starting time, eg, `20220422_031705` for 03:17:05 on 2022-04-22.
+
   - Our framework also re-implements some other popular hyperspherical face recognition methods such as ArcFace, AM-Softmax (CosFace) and CocoLoss (NormFace). Please check out the folder `model/head` and some examplar config files in the folder `config/papers/SphereFace2/sec31`.
 
 3. **Test a model (see the testing config file for detailed setup)**
