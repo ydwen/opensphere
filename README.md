@@ -19,7 +19,7 @@
 
 
 <!-- TABLE OF CONTENTS -->
-***Table of Contents***: - <a href="#update">Update</a> - <a href="#key-features">Key features</a> - <a href="#setup">Setup</a> - <a href="#get-started">Get started</a> - <a href="#reproduce-published-results">Reproducible results</a> - <a href="#citation">Citation</a> - <a href="#contact">Contact</a> - 
+***Table of Contents***: - <a href="#update">Update</a> - <a href="#key-features">Key features</a> - <a href="#setup">Setup</a> - <a href="#get-started">Get started</a> - <a href="#log-and-pretrained-models">Pretrained models</a> - <a href="#reproduce-published-results">Reproducible results</a> - <a href="#citation">Citation</a> -
 
 <details open>
 <summary>Supported Projects</summary>
@@ -38,7 +38,7 @@
 - **2022.4.1**: initial commit.
 - **2022.4.9**: added the download script for some datasets.
 - **2022.4.12**: added SFNet (with BN) and IResNet.
-- **2022.4.22**: added SphereFace+.
+- **2022.4.22**: added SphereFace+, MS1M, and config files on MS1M.
 
 ## Key Features
 - **Implemented Loss Functions** ([folder](https://github.com/ydwen/opensphere/tree/main/model/head))
@@ -108,6 +108,8 @@ In this part, we assume you are in the directory `$OPENSPHERE_ROOT`. After succe
 	```
 
 For more information about how to use training and testing config files, please see [here](https://github.com/ydwen/opensphere/tree/main/config).
+
+## Log and pretrained models
 
 ## Reproduce published results
 
