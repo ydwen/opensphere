@@ -117,12 +117,16 @@ For more information about how to use training and testing config files, please 
 
 ## Results and pretrained models
 
+<div align="center">
+	
 Loss | Architecture | Dataset | Config & Training Log & Pretrained Model
 :---:|:---:|:---:|:---:
 SphereFace | SFNet-20 (without BN) | VGGFace2 |[Google Drive](https://drive.google.com/file/d/1-NUP9cthANpa3_HHpEOklFtJC_dJNVjP/view?usp=sharing)
 SphereFace+ | SFNet-20 (without BN) | VGGFace2 |[Google Drive](https://drive.google.com/file/d/1CBfxxTN712QmuwTk7i2az6JTs3ZRo-ia/view?usp=sharing)
 SphereFace | SFNet-64 (with BN) | MS1M |[Google Drive](https://drive.google.com/file/d/1UxQryEhy6UAlbg5rDJcybLemuvIzoMZ_/view?usp=sharing)
 
+</div>
+	
 ## Reproduce published results
 
 We create an additional folder `config/papers` that is used to provide detailed config files and reproduce results in published papers. Currently we provide config files for the following papers:
