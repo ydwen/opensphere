@@ -104,8 +104,10 @@ In this part, we assume you are in the directory `$OPENSPHERE_ROOT`. After succe
 3. **Test a model (see the testing config file for detailed setup)**
 
 	```console
-	CUDA_VISIBLE_DEVICES=0,1 python test.py --config config/test/ijbb.yml
+	CUDA_VISIBLE_DEVICES=0,1 python test.py --config config/test/ijbb.yml --proj_dir project/##YourFolder##
 	```
+
+For more information about how to use training and testing config files, please see [here](https://github.com/ydwen/opensphere/tree/main/config).
 
 ## Reproduce published results
 
