@@ -19,7 +19,7 @@
 
 
 <!-- TABLE OF CONTENTS -->
-***Table of Contents***: - <a href="#update">Update</a> - <a href="#key-features">Key features</a> - <a href="#get-started">Get started</a> - <a href="#log-and-pretrained-models">Pretrained models</a> - <a href="#reproduce-published-results">Reproducible results</a> - <a href="#citation">Citation</a> -
+***Table of Contents***: - <a href="#key-features">Key features</a> - <a href="#setup">Setup</a> - <a href="#get-started">Get started</a> - <a href="#log-and-pretrained-models">Pretrained models</a> - <a href="#reproduce-published-results">Reproducible results</a> - <a href="#citation">Citation</a> -
 
 <details open>
 <summary>Supported Projects</summary>
