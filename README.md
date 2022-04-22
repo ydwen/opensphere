@@ -84,6 +84,12 @@ In this part, we assume you are in the directory `$OPENSPHERE_ROOT`. After succe
 	bash scripts/dataset_setup.sh
 	```
 
+  - If you need the `ms1m` training set, please run the additional commend:
+
+	```console
+	bash scripts/dataset_setup_ms1m.sh
+	```
+
 
 2. **Training a model (see the training config file for the detailed setup)**
 
