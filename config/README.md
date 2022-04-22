@@ -18,7 +18,7 @@ To use four GPUs, simply modify `CUDA_VISIBLE_DEVICES=0,1` to `CUDA_VISIBLE_DEVI
 
 ### Testing config
 
-After finishing training a model, you will see a `project` folder under `$OPENSPHERE`. The trained model is saved in the folder named by the job starting time, eg, `20220422_031705` for 03:17:05 on 2022-04-22.
+After finishing training a model, you will see a `project` folder under `$OPENSPHERE_ROOT`. The trained model is saved in the folder named by the job starting time, eg, `20220422_031705` for 03:17:05 on 2022-04-22.
 
 To test a trained model, we provide testing config files for the combined validation set and IJB dataset.
 
