@@ -135,7 +135,18 @@ For **SphereFace**:
 	year = {2017}
   }
   ```
-      
+
+For **SphereFace+**:
+
+  ```bibtex
+  @InProceedings{Liu2018MHE,
+	title={Learning towards Minimum Hyperspherical Energy},
+	author={Liu, Weiyang and Lin, Rongmei and Liu, Zhen and Liu, Lixin and Yu, Zhiding and Dai, Bo and Song, Le},
+	booktitle={NeurIPS},
+	year={2018}
+  }
+  ```
+
 For **SphereFace2**:
 
   ```bibtex
