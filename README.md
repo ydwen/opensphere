@@ -84,7 +84,7 @@ In this part, we assume you are in the directory `$OPENSPHERE_ROOT`. After succe
 	bash scripts/dataset_setup.sh
 	```
 
-  - If you need the `ms1m` training set, please run the additional commend:
+  - If you need the `MS1M` training set, please run the additional commend:
 
 	```console
 	bash scripts/dataset_setup_ms1m.sh
@@ -115,7 +115,13 @@ In this part, we assume you are in the directory `$OPENSPHERE_ROOT`. After succe
 
 For more information about how to use training and testing config files, please see [here](https://github.com/ydwen/opensphere/tree/main/config).
 
-## Log and pretrained models
+## Results and pretrained models
+
+Loss | Architecture | Dataset | Config & Training Log & Pretrained Model
+:---:|:---:|:---:|:---:
+SphereFace | SFNet-20 (without BN) | VGGFace2 |[Google Drive](https://drive.google.com/file/d/1-NUP9cthANpa3_HHpEOklFtJC_dJNVjP/view?usp=sharing)
+SphereFace+ | SFNet-20 (without BN) | VGGFace2 |[Google Drive](https://drive.google.com/file/d/1CBfxxTN712QmuwTk7i2az6JTs3ZRo-ia/view?usp=sharing)
+SphereFace | SFNet-64 (with BN) | MS1M |[Google Drive](https://drive.google.com/file/d/1UxQryEhy6UAlbg5rDJcybLemuvIzoMZ_/view?usp=sharing)
 
 ## Reproduce published results
 
