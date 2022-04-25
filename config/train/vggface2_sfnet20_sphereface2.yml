@@ -13,7 +13,7 @@ project:
     headers: {LFW: ':3.3f', AgeDB-30: ':3.3f', CA-LFW: ':3.3f',
       CP-LFW: ':3.3f'}
   val_intvl: 2000
-  save_iters: [66000, 67000, 68000, 69000, 70000]
+  save_iters: [96000, 97000, 98000, 99000, 100000]
 data:
   base:
     dataset:
@@ -62,7 +62,7 @@ model:
     optimizer: {type: SGD, lr: 0.1, momentum: 0.9, weight_decay: 0.0005}
     scheduler:
       type: MultiStepLR
-      milestones: [40000, 60000, 70000]
+      milestones: [50000, 78000, 94000, 100000]
       gamma: 0.1
   backbone:
     net:
