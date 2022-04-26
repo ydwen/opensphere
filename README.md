@@ -49,7 +49,7 @@
   - [SFNet (without Batch Norm)](https://wyliu.com/papers/LiuCVPR17v3.pdf), [SFNet (with Batch Norm)](https://wyliu.com/papers/spherefacer_v3_TPAMI.pdf), [IResNet](https://openaccess.thecvf.com/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf)
 
 - **Available Datasets**
-  - **Training**: [VGGFace2](https://arxiv.org/pdf/1710.08092.pdf), [WebFace](https://arxiv.org/pdf/1411.7923v1.pdf), [MS1M](https://arxiv.org/pdf/1607.08221.pdf)
+  - **Training**: [VGGFace2](https://arxiv.org/pdf/1710.08092.pdf), [WebFace](https://arxiv.org/pdf/1411.7923v1.pdf), [MS1M](https://arxiv.org/pdf/1607.08221.pdf), [Glint360K](https://arxiv.org/abs/2203.15565)
   - **Validation**: [LFW](http://vis-www.cs.umass.edu/lfw/), [AgeDB-30](https://ibug.doc.ic.ac.uk/media/uploads/documents/agedb.pdf), [CA-LFW](https://arxiv.org/pdf/1708.08197.pdf), [CP-LFW](http://www.whdeng.cn/CPLFW/Cross-Pose-LFW.pdf)
   - **Testing**: [IJB-B](https://openaccess.thecvf.com/content_cvpr_2017_workshops/w6/papers/Whitelam_IARPA_Janus_Benchmark-B_CVPR_2017_paper.pdf), [IJB-C](http://biometrics.cse.msu.edu/Publications/Face/Mazeetal_IARPAJanusBenchmarkCFaceDatasetAndProtocol_ICB2018.pdf)
 
@@ -89,7 +89,7 @@ In this part, we assume you are in the directory `$OPENSPHERE_ROOT`. After succe
 	```console
 	bash scripts/dataset_setup_ms1m.sh
 	```
-  - To download other datasets, see the `scripts` folder and find what you need.
+  - To download other datasets (e.g., `WebFace` or `Glint360K`), see the `scripts` folder and find what you need.
 
 2. **Training a model (see the training config file for the detailed setup)**
 
