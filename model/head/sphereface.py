@@ -7,6 +7,8 @@ import math
 
 class SphereFace(nn.Module):
     """ reference: <SphereFace: Deep Hypersphere Embedding for Face Recognition>"
+        It also used characteristic gradient detachment tricks proposed in
+        <SphereFace Revived: Unifying Hyperspherical Face Recognition>.
     """
     def __init__(self, feat_dim, num_class, s=30., m=1.5):
         super(SphereFace, self).__init__()
