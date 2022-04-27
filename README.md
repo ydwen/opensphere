@@ -93,16 +93,24 @@ In this part, we assume you are in the directory `$OPENSPHERE_ROOT`. After succe
 
 2. **Training a model (see the training config file for the detailed setup)**
 
-  - To train SphereFace2 with SFNet-20 on VGGFace2, run the following commend:
+    We give a few examples for training on different datasets with different backbone architectures:
+
+  - To train SphereFace2 with SFNet-20 on `VGGFace2`, run the following commend (with 2 GPUs):
 
 	```console
 	CUDA_VISIBLE_DEVICES=0,1 python train.py --config config/train/vggface2_sfnet20_sphereface2.yml
 	```
 
-  - To train SphereFace with SFNet-20 on VGGFace2, run the following commend:
+  - To train SphereFace with SFNet-20 on `VGGFace2`, run the following commend (with 2 GPUs):
 
 	```console
 	CUDA_VISIBLE_DEVICES=0,1 python train.py --config config/train/vggface2_sfnet20_sphereface.yml
+	```
+
+  - To train SphereFace with SFNet-64 (with BN) on `MS1M`, run the following commend (with 4 GPUs):
+
+	```console
+	CUDA_VISIBLE_DEVICES=0,1,2,3 python train.py --config config/train/ms1m_sfnet64bn_sphereface.yml
 	```
 
   - After finishing training a model, you will see a `project` folder under `$OPENSPHERE_ROOT`. The trained model is saved in the folder named by the job starting time, eg, `20220422_031705` for 03:17:05 on 2022-04-22.
@@ -111,8 +119,28 @@ In this part, we assume you are in the directory `$OPENSPHERE_ROOT`. After succe
 
 3. **Test a model (see the testing config file for detailed setup)**
 
+  - To test on `IJB-B` and `IJB-C`, run
+
+	```console
+	CUDA_VISIBLE_DEVICES=0,1 python test.py --config config/test/ijb.yml --proj_dir project/##YourFolder##
+	```
+
+  - To test on `IJB-B`, run
+
 	```console
 	CUDA_VISIBLE_DEVICES=0,1 python test.py --config config/test/ijbb.yml --proj_dir project/##YourFolder##
+	```
+
+  - To test on `IJB-C`, run
+
+	```console
+	CUDA_VISIBLE_DEVICES=0,1 python test.py --config config/test/ijbc.yml --proj_dir project/##YourFolder##
+	```
+
+  - To test on the `combined validation` dataset, run
+
+	```console
+	CUDA_VISIBLE_DEVICES=0,1 python test.py --config config/test/combined.yml --proj_dir project/##YourFolder##
 	```
 
 For more information about how to use training and testing config files, please see [here](https://github.com/ydwen/opensphere/tree/main/config).
