@@ -119,28 +119,28 @@ In this part, we assume you are in the directory `$OPENSPHERE_ROOT`. After succe
 
 3. **Test a model (see the testing config file for detailed setup)**
 
-  - To test on `IJB-B` and `IJB-C`, run
+  - To test on the `combined validation` dataset, simply run
+
+	```console
+	CUDA_VISIBLE_DEVICES=0,1 python test.py --config config/test/combined.yml --proj_dir project/##YourFolder##
+	```
+
+  - To test on both `IJB-B` and `IJB-C`, simply run
 
 	```console
 	CUDA_VISIBLE_DEVICES=0,1 python test.py --config config/test/ijb.yml --proj_dir project/##YourFolder##
 	```
 
-  - To test on `IJB-B`, run
+  - To test on `IJB-B`, simply run
 
 	```console
 	CUDA_VISIBLE_DEVICES=0,1 python test.py --config config/test/ijbb.yml --proj_dir project/##YourFolder##
 	```
 
-  - To test on `IJB-C`, run
+  - To test on `IJB-C`, simply run
 
 	```console
 	CUDA_VISIBLE_DEVICES=0,1 python test.py --config config/test/ijbc.yml --proj_dir project/##YourFolder##
-	```
-
-  - To test on the `combined validation` dataset, run
-
-	```console
-	CUDA_VISIBLE_DEVICES=0,1 python test.py --config config/test/combined.yml --proj_dir project/##YourFolder##
 	```
 
 For more information about how to use training and testing config files, please see [here](https://github.com/ydwen/opensphere/tree/main/config).
