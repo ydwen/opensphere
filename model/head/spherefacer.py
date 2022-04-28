@@ -29,7 +29,7 @@ def get_d_theta(cos_theta, y, magn_type, m):
 
     return d_theta
 
-# Warning: Both SphereFaceR_N and SphereFaceR_S are fully tested.
+# Warning: Both SphereFaceR_N and SphereFaceR_S are not fully tested.
 #          Please use SphereFaceR_H for now.
 
 class SphereFaceR_N(nn.Module):
