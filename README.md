@@ -29,7 +29,7 @@
 
 - [x] [**SphereFace2**: Binary Classification is All You Need for Deep Face Recognition](https://wyliu.com/papers/sphereface2_ICLR22.pdf), *ICLR 2022* 
 
-- [ ] [**SphereFace Revived**: Unifying Hyperspherical Face Recognition](https://wyliu.com/papers/spherefacer_v3_TPAMI.pdf), *TPAMI 2022*
+- [x] [**SphereFace Revived**: Unifying Hyperspherical Face Recognition](https://wyliu.com/papers/spherefacer_v3_TPAMI.pdf), *TPAMI 2022*
 
 </details>
 
