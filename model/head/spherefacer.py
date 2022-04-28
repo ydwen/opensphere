@@ -29,7 +29,8 @@ def get_d_theta(cos_theta, y, magn_type, m):
 
     return d_theta
 
-# Warning: Both SphereFaceR_N and SphereFaceR_S are needed to be tested before using.
+# Warning: Both SphereFaceR_N and SphereFaceR_S are fully tested.
+#          Please use SphereFaceR_H for now.
 
 class SphereFaceR_N(nn.Module):
     """ reference: <SphereFace Revived: Unifying Hyperspherical Face Recognition>
