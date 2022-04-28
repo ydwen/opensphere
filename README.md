@@ -116,6 +116,8 @@ In this part, we assume you are in the directory `$OPENSPHERE_ROOT`. After succe
 	CUDA_VISIBLE_DEVICES=0,1,2,3 python train.py --config config/train/ms1m_sfnet64bn_sphereface.yml
 	```
 
+  - We provide many config files for training, see [this folder](https://github.com/ydwen/opensphere/tree/main/config/train) for details.
+
   - After finishing training a model, you will see a `project` folder under `$OPENSPHERE_ROOT`. The trained model is saved in the folder named by the job starting time, eg, `20220422_031705` for 03:17:05 on 2022-04-22.
 
   - Our framework also re-implements some other popular hyperspherical face recognition methods such as ArcFace, AM-Softmax (CosFace) and CocoLoss (NormFace). Please check out the folder `model/head` and some examplar config files in the folder `config/papers/SphereFace2/sec31`.
