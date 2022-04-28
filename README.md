@@ -110,6 +110,12 @@ In this part, we assume you are in the directory `$OPENSPHERE_ROOT`. After succe
 	CUDA_VISIBLE_DEVICES=0,1 python train.py --config config/train/vggface2_sfnet20_sphereface.yml
 	```
 
+  - To train SphereFace-R (v2,HFN) with SFNet-20 on `VGGFace2`, run the following commend (with 2 GPUs):
+
+	```console
+	CUDA_VISIBLE_DEVICES=0,1 python train.py --config config/train/vggface2_sfnet20_spherefacer.yml
+	```
+
   - To train SphereFace with SFNet-64 (with BN) on `MS1M`, run the following commend (with 4 GPUs):
 
 	```console
