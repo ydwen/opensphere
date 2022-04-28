@@ -171,7 +171,7 @@ SphereFace-R (HFN,v2) | SFNet-64 (w/ BN) | Glint360K | To be added
 SphereFace2 | SFNet-64 (w/ BN) | Glint360K | To be added
 SphereFace | IResNet-100 | Glint360K | To be added
 SphereFace+ | IResNet-100 | Glint360K | To be added
-SphereFace-R (Hard Feature Norm) | IResNet-100 | Glint360K | To be added
+SphereFace-R (HFN,v2) | IResNet-100 | Glint360K | To be added
 SphereFace2 | IResNet-100 | Glint360K | To be added
 </div>
 	
