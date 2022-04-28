@@ -43,7 +43,7 @@
 
 ## Key Features
 - **Implemented Loss Functions** ([folder](https://github.com/ydwen/opensphere/tree/main/model/head))
-  - [SphereFace](https://wyliu.com/papers/LiuCVPR17v3.pdf), [SphereFace+](https://wyliu.com/papers/LiuNIPS18_MHE.pdf), [SphereFace2](https://wyliu.com/papers/sphereface2_ICLR22.pdf)
+  - [SphereFace](https://wyliu.com/papers/LiuCVPR17v3.pdf), [SphereFace+](https://wyliu.com/papers/LiuNIPS18_MHE.pdf), [SphereFace2](https://wyliu.com/papers/sphereface2_ICLR22.pdf), [SphereFace-R](https://wyliu.com/papers/spherefacer_v3_TPAMI.pdf)
   - [ArcFace](https://arxiv.org/pdf/1801.07698.pdf), [AM-Softmax](https://arxiv.org/pdf/1801.05599.pdf) ([CosFace](https://arxiv.org/pdf/1801.09414.pdf)), [CocoLoss](https://arxiv.org/pdf/1710.00870.pdf) ([NormFace](https://arxiv.org/pdf/1704.06369.pdf))
 
 - **Implemented Network Architectures** ([folder](https://github.com/ydwen/opensphere/tree/main/model/backbone))
