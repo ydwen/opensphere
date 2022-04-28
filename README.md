@@ -56,7 +56,7 @@
   - **Validation**: [LFW](http://vis-www.cs.umass.edu/lfw/), [AgeDB-30](https://ibug.doc.ic.ac.uk/media/uploads/documents/agedb.pdf), [CA-LFW](https://arxiv.org/pdf/1708.08197.pdf), [CP-LFW](http://www.whdeng.cn/CPLFW/Cross-Pose-LFW.pdf)
   - **Testing**: [IJB-B](https://openaccess.thecvf.com/content_cvpr_2017_workshops/w6/papers/Whitelam_IARPA_Janus_Benchmark-B_CVPR_2017_paper.pdf), [IJB-C](http://biometrics.cse.msu.edu/Publications/Face/Mazeetal_IARPAJanusBenchmarkCFaceDatasetAndProtocol_ICB2018.pdf)
 
-- **TODO**: [SphereFace-R](https://wyliu.com/papers/spherefacer_v3_TPAMI.pdf) and more examplar config files
+- **TODO**: more examplar config files for training, 2D/3D feature visualization tools
 
 - We welcome submissions of your loss functions or network architectures to **OpenSphere**!
 
