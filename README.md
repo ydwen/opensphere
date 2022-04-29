@@ -169,7 +169,7 @@ Loss | Architecture | Dataset | Config & Training Log & Pretrained Model
 :---:|:---:|:---:|:---:
 SphereFace | SFNet-20 (w/o BN) | VGGFace2 |[Google Drive](https://drive.google.com/file/d/1-NUP9cthANpa3_HHpEOklFtJC_dJNVjP/view?usp=sharing)
 SphereFace+ | SFNet-20 (w/o BN) | VGGFace2 |[Google Drive](https://drive.google.com/file/d/1CBfxxTN712QmuwTk7i2az6JTs3ZRo-ia/view?usp=sharing)
-SphereFace-R (HFN,v2) | SFNet-20 (w/o BN) | VGGFace2 | [Google Drive](https://drive.google.com/file/d/15OBzZk4vxIXSSL8h-0tj1S5P2MjHzNRs/view?usp=sharing)
+SphereFace-R (HFN,v2) | SFNet-20 (w/o BN) | VGGFace2 | [Google Drive](https://drive.google.com/file/d/1dnylODdnatcVSHitdht8_fN2im-0gEGV/view?usp=sharing)
 SphereFace-R (SFN,v2) | SFNet-20 (w/o BN) | VGGFace2 | To be added
 SphereFace2 | SFNet-20 (w/o BN) | VGGFace2 |[Google Drive](https://drive.google.com/file/d/1ZO3clpW_NHTybOgXIhrA7Kid4OIpQnrG/view?usp=sharing)
 SphereFace | SFNet-64 (w/ BN) | MS1M |[Google Drive](https://drive.google.com/file/d/1UxQryEhy6UAlbg5rDJcybLemuvIzoMZ_/view?usp=sharing)
