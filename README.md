@@ -100,7 +100,7 @@ In this part, we assume you are in the directory `$OPENSPHERE_ROOT`. After succe
 	```
   - To download other datasets (e.g., `WebFace` or `Glint360K`), see the `scripts` folder and find what you need.
 
-2. **Training a model (see the training config file for the detailed setup)**
+2. **Train a model (see the training config file for the detailed setup)**
 
     We give a few examples for training on different datasets with different backbone architectures:
 
