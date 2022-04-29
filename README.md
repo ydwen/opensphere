@@ -4,11 +4,15 @@
 </div>
 &nbsp;
 
+<div align="center">
+	
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-red.svg)](#python)
-[![made-with-pytorch](https://img.shields.io/badge/Made%20with-Pytorch-brightgreen)](https://pytorch.org/)
+[![made-with-pytorch](https://img.shields.io/badge/Made%20with-PyTorch-brightgreen)](https://pytorch.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 **OpenSphere** is a hyperspherical face recognition library based on PyTorch. Check out the [project homepage](https://opensphere.world/).
+	
+</div>
 
 <p align="center"> 
 <img src="assets/teaser.gif" width="580"/>
