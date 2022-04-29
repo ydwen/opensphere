@@ -1,4 +1,6 @@
-
+ &nbsp;
+ &nbsp;
+  
 <div align="center">
   <img src="assets/opensphere_logo2.png" width="600"/>
 </div>
