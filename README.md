@@ -43,11 +43,11 @@
 
 
 ## Update
-- **2022.4.1**: initial commit.
-- **2022.4.9**: added the download script for some datasets.
-- **2022.4.12**: added SFNet (with BN) and IResNet.
-- **2022.4.22**: added SphereFace+, MS1M, and config files on MS1M.
 - **2022.4.28**: added SphereFace-R, Glint360K, and more pretrained models.
+- **2022.4.22**: added SphereFace+, MS1M, and config files on MS1M.
+- **2022.4.12**: added SFNet (with BN) and IResNet.
+- **2022.4.9**: added the download script for some datasets.
+- **2022.4.1**: initial commit.
 
 ## Key Features
 - **Implemented Loss Functions** ([folder](https://github.com/ydwen/opensphere/tree/main/model/head))
