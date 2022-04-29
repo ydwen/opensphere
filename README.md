@@ -15,7 +15,7 @@
 **OpenSphere** is a hyperspherical face recognition library based on PyTorch. Check out the [project homepage](https://opensphere.world/).
 	
 </div>
-
+&nbsp;
 <p align="center"> 
 <img src="assets/teaser.gif" width="580"/>
 </p>
