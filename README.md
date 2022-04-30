@@ -127,6 +127,12 @@ In this part, we assume you are in the directory `$OPENSPHERE_ROOT`. After succe
 	CUDA_VISIBLE_DEVICES=0,1,2,3 python train.py --config config/train/ms1m_sfnet64bn_sphereface.yml
 	```
 
+  - To train SphereFace with IResNet-100 on `MS1M`, run the following commend (with 4 GPUs):
+
+	```console
+	CUDA_VISIBLE_DEVICES=0,1,2,3 python train.py --config config/train/ms1m_iresnet100_sphereface.yml
+	```
+
   - We provide many config files for training, see [this folder](https://github.com/ydwen/opensphere/tree/main/config/train) for details.
 
   - After finishing training a model, you will see a `project` folder under `$OPENSPHERE_ROOT`. The trained model is saved in the folder named by the job starting time, eg, `20220422_031705` for 03:17:05 on 2022-04-22.
