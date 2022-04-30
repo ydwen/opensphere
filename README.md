@@ -184,7 +184,7 @@ SphereFace-R (HFN,v2) | SFNet-64 (w/ BN) | MS1M | To be added
 SphereFace2 | SFNet-64 (w/ BN) | MS1M | To be added
 SphereFace | IResNet-100 | MS1M |[Google Drive](https://drive.google.com/file/d/1Te66jDL0uXdfnBxd5qTv_FvP5ES_EF5y/view?usp=sharing)
 SphereFace+ | IResNet-100 | MS1M | To be added
-SphereFace-R (HFN,v2) | IResNet-100 | MS1M | To be added
+SphereFace-R (HFN,v2) | IResNet-100 | MS1M | [Google Drive](https://drive.google.com/file/d/1GLfiBpJxlv4w2dFZ5NlWuUx5OwIuZELL/view?usp=sharing)
 SphereFace2 | IResNet-100 | MS1M | To be added
 SphereFace | SFNet-64 (w/ BN) | Glint360K | To be added
 SphereFace+ | SFNet-64 (w/ BN) | Glint360K | To be added
