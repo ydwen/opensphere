@@ -179,7 +179,7 @@ SphereFace-R (HFN,v2) | SFNet-20 (w/o BN) | VGGFace2 | [Google Drive](https://dr
 SphereFace-R (SFN,v2) | SFNet-20 (w/o BN) | VGGFace2 | To be added
 SphereFace2 | SFNet-20 (w/o BN) | VGGFace2 |[Google Drive](https://drive.google.com/file/d/1ZO3clpW_NHTybOgXIhrA7Kid4OIpQnrG/view?usp=sharing)
 SphereFace | SFNet-64 (w/ BN) | MS1M |[Google Drive](https://drive.google.com/file/d/1UxQryEhy6UAlbg5rDJcybLemuvIzoMZ_/view?usp=sharing)
-SphereFace+ | SFNet-64 (w/ BN) | MS1M | To be added
+SphereFace+ | SFNet-64 (w/ BN) | MS1M | [Google Drive](https://drive.google.com/file/d/1UybLNHrJH8oc-6WmMIv_Gs2smR36jFPn/view?usp=sharing)
 SphereFace-R (HFN,v2) | SFNet-64 (w/ BN) | MS1M | To be added
 SphereFace2 | SFNet-64 (w/ BN) | MS1M | To be added
 SphereFace | IResNet-100 | MS1M |[Google Drive](https://drive.google.com/file/d/1Te66jDL0uXdfnBxd5qTv_FvP5ES_EF5y/view?usp=sharing)
