@@ -46,6 +46,9 @@ class IterRunner():
         if not osp.exists(proj_dir):
             os.makedirs(proj_dir)
         proj_cfg['proj_dir'] = proj_dir
+        print('')
+        print('The training log and models are saved to ' + proj_dir)
+        print('')
 
         # model directory
         self.model_dir = osp.join(proj_dir, proj_cfg['model_dir'])
