@@ -174,7 +174,7 @@ For more information about how to use training and testing config files, please 
 	
 Loss | Architecture | Dataset | Config & Training Log & Pretrained Model
 :---:|:---:|:---:|:---:
-SphereFace | SFNet-20 (w/o BN) | VGGFace2 |[Google Drive](https://drive.google.com/file/d/1-NUP9cthANpa3_HHpEOklFtJC_dJNVjP/view?usp=sharing)
+SphereFace | SFNet-20 (w/o BN) | VGGFace2 |[Google Drive](https://drive.google.com/file/d/1347KRJDqJiySdAOarVDkSlftg3K-W26g/view?usp=sharing)
 SphereFace+ | SFNet-20 (w/o BN) | VGGFace2 |[Google Drive](https://drive.google.com/file/d/1CBfxxTN712QmuwTk7i2az6JTs3ZRo-ia/view?usp=sharing)
 SphereFace-R (HFN,v2) | SFNet-20 (w/o BN) | VGGFace2 | [Google Drive](https://drive.google.com/file/d/1dnylODdnatcVSHitdht8_fN2im-0gEGV/view?usp=sharing)
 SphereFace-R (SFN,v2) | SFNet-20 (w/o BN) | VGGFace2 | To be added
