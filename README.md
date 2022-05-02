@@ -224,6 +224,13 @@ For **SphereFace**:
 	booktitle = {CVPR},
 	year = {2017}
   }
+  
+  @inproceedings{Liu2016lsoftmax,
+	title={Large-Margin Softmax Loss for Convolutional Neural Networks},
+	author={Liu, Weiyang and Wen, Yandong and Yu, Zhiding and Yang, Meng},
+	booktitle={ICML},
+	year={2016}
+  }
   ```
 
 For **SphereFace+**:
