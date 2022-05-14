@@ -7,6 +7,7 @@ import math
 
 class GAsoftmax(nn.Module):
     """ reference: <Deep Hyperspherical Learning> in NIPS 2017"
+        Section 3 in the paper: https://arxiv.org/abs/1711.03189
     """
     def __init__(self, feat_dim, num_class, s=30., m=1.5):
         super(GAsoftmax, self).__init__()
