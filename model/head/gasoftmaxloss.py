@@ -6,7 +6,7 @@ import math
 
 
 class GAsoftmax(nn.Module):
-    """ reference: <Deep Hyperspherical Learning>"
+    """ reference: <Deep Hyperspherical Learning> in NIPS 2017"
     """
     def __init__(self, feat_dim, num_class, s=30., m=1.5):
         super(GAsoftmax, self).__init__()
