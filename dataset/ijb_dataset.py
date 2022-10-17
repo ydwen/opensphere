@@ -172,8 +172,7 @@ class IJBDataset(Dataset):
 
         return F.normalize(tmpl_feats, dim=1)
 
-    def evaluate_11(self, tmpl_feats,
-            FPRs=['1e{}'.format(p) for p in range(-6, 0)]):
+    def evaluate_11(self, f_scoring, tmpl_feats):
         # pair-wise scores
         posn_ids0 = self.veri_info['posn_ids0']
         posn_ids1 = self.veri_info['posn_ids1']
@@ -186,16 +185,16 @@ class IJBDataset(Dataset):
             indices1 = posn_ids1[idx:idx+step]
             feats0 = tmpl_feats[indices0, :]
             feats1 = tmpl_feats[indices1, :]
-            scores.extend(torch.sum(feats0 * feats1, dim=1).tolist())
+            scores.extend(f_scoring(feats0, feats1, n2m=False).tolist())
 
         # TPR @ FPR
+        FPRs=['1e{}'.format(p) for p in range(-6, 0)]
         metrics = get_metrics(labels, scores, FPRs)
         TPRs = [metric for metric in metrics if 'TPR' in metric[0]]
 
         return TPRs
 
-    def evaluate_1n(self, tmpl_feats, topk=[1, 5, 10],
-            FPIRs=['1e{}'.format(p) for p in range(-2, 0)]):
+    def evaluate_1n(self, f_scoring, tmpl_feats, topk=[1, 5, 10]):
         g_posn_ids = self.iden_info['g']['posn_ids']
         g_subj_ids = self.iden_info['g']['subj_ids']
         p_posn_ids = self.iden_info['p']['posn_ids']
@@ -209,11 +208,11 @@ class IJBDataset(Dataset):
         probe_size = p_subj_ids.size(0)
 
         # topk
-        scores = p_tmpl_feats.mm(g_tmpl_feats.t())
+        scores = f_scoring(p_tmpl_feats, g_tmpl_feats, n2m=True)
         _, topk_indices = torch.topk(
-                scores, max(topk), dim=1, largest=True, sorted=True)
+            scores, max(topk), dim=1, largest=True, sorted=True)
         correct = g_subj_ids[topk_indices].eq(
-                p_subj_ids.view(-1, 1).expand_as(topk_indices))
+            p_subj_ids.view(-1, 1).expand_as(topk_indices))
 
         topk_ACCs = []
         for k in topk:
@@ -227,6 +226,7 @@ class IJBDataset(Dataset):
         pos_scores = torch.masked_select(scores, mask)
         neg_scores = torch.masked_select(scores, torch.logical_not(mask))
         
+        FPIRs=['1e{}'.format(p) for p in range(-2, 0)]
         ks = [math.ceil(float(FPIR) * probe_size) for FPIR in FPIRs]
         ths, _ = torch.topk(neg_scores, max(ks), largest=True, sorted=True)
         TPIRs = []
@@ -237,10 +237,10 @@ class IJBDataset(Dataset):
 
         return topk_ACCs, TPIRs
 
-    def evaluate(self, feats):
+    def evaluate(self, f_scoring, feats):
         tmpl_feats = self.feat2template(feats)
-        TPRs = self.evaluate_11(tmpl_feats)
-        topk_ACCs, TPIRs = self.evaluate_1n(tmpl_feats)
+        TPRs = self.evaluate_11(f_scoring, tmpl_feats)
+        topk_ACCs, TPIRs = self.evaluate_1n(f_scoring, tmpl_feats)
 
         return TPRs + topk_ACCs + TPIRs
 

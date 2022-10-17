@@ -1,16 +1,12 @@
-import torch
 import os.path as osp
-
-import torch
-import torch.nn.functional as F
 
 from torch.utils.data import Dataset
 from .utils import image_pipeline, get_metrics
 
 
 class PairDataset(Dataset):
-    def __init__(self, name, data_dir, ann_path, metrics,
-            test_mode=True):
+    def __init__(self, name, data_dir, ann_path,
+                 metrics=['ACC'], test_mode=True):
         super().__init__()
 
         self.name = name
@@ -47,7 +43,7 @@ class PairDataset(Dataset):
             lines = f.readlines()
 
         path2index = {item['path']: idx 
-                for idx, item in enumerate(self.data_items)}
+                      for idx, item in enumerate(self.data_items)}
 
         self.indices0 = []
         self.indices1 = []
@@ -66,14 +62,12 @@ class PairDataset(Dataset):
 
         return image, idx
 
-    def evaluate(self, feats, 
-            FPRs=['1e-4', '5e-4', '1e-3', '5e-3', '5e-2']):
-        # pair-wise scores
-        feats = F.normalize(feats, dim=1)
+    def evaluate(self, f_scoring, feats):
         feats0 = feats[self.indices0, :]
         feats1 = feats[self.indices1, :]
-        scores = torch.sum(feats0 * feats1, dim=1).tolist()
-
+        scores = f_scoring(feats0, feats1, n2m=False).tolist()
+        FPRs = [metric.split('=')[-1]
+                for metric in self.metrics if 'FPR' in metric]
         return get_metrics(self.labels, scores, FPRs)
 
     def __len__(self):

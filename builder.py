@@ -1,13 +1,11 @@
-import os
-import copy
 import warnings
 
 import torch
 import torch.nn as nn
 
-from utils import is_dist, get_world_size, get_rank
+from copy import deepcopy
 from importlib import import_module
-
+from utils import get_world_size, get_rank
 
 def build_from_cfg(cfg, module):
     """Build a module from config dict.
@@ -21,10 +19,9 @@ def build_from_cfg(cfg, module):
     if not isinstance(cfg, dict):
         raise TypeError(f'cfg must be a dict, but got {type(cfg)}')
     if 'type' not in cfg:
-        raise KeyError(f'`cfg` must contain the key "type", but got {cfg}')
+        raise KeyError('Missing key "type" in `cfg`', cfg)
 
     args = cfg.copy()
-
     obj_type = args.pop('type')
     if not isinstance(obj_type, str):
         raise TypeError(f'type must be a str, but got {type(obj_type)}')
@@ -35,90 +32,89 @@ def build_from_cfg(cfg, module):
 
     return obj_cls(**args)
 
-
 def build_dataloader(cfg):
     """
     Args:
-        the type of `cfg` could also be a dict for a dataloader,
+        the `cfg` could be a dict for a dataloader,
         or a list or a tuple of dicts for multiple dataloaders.
     Returns:
         PyTorch dataloader(s)
     """
     if isinstance(cfg, (list, tuple)):
         return [build_dataloader(c) for c in cfg]
-    else:
-        if 'dataset' not in cfg:
-            raise KeyError(f'`cfg` must contain the key "dataset", but got {cfg}')
-        dataset = build_from_cfg(cfg['dataset'], 'dataset')
-        world_size = get_world_size()
-        if world_size > 1:
-            sampler = torch.utils.data.distributed.DistributedSampler(
-                    dataset, shuffle=cfg['dataloader']['shuffle'])
-        else:
-            sampler = None
- 
-        if 'dataloader' not in cfg:
-            raise KeyError(f'`cfg` must contain the key "dataloader", but got {cfg}')
-        loader_cfg = copy.deepcopy(cfg['dataloader'])
-        loader_cfg['dataset'] = dataset
-        loader_cfg['sampler'] = sampler 
-        loader_cfg['shuffle'] = (sampler is None) and loader_cfg['shuffle']
-        # recompute the batch_size for each gpu
-        sample_per_gpu = loader_cfg['batch_size'] // world_size
-        if loader_cfg['batch_size'] % world_size != 0:
-            warnings.warn('the batch size is changed '
-            'to {}'.format(sample_per_gpu * world_size))
-        loader_cfg['batch_size'] = sample_per_gpu
 
-        worker_per_gpu = loader_cfg['num_workers']
-        loader_cfg['num_workers'] = worker_per_gpu
- 
-        dataloader = build_from_cfg(loader_cfg, 'torch.utils.data')
-    
-        return dataloader
+    if 'dataset' not in cfg:
+        raise KeyError('Missing key "dataset" in `cfg`', cfg)
+    if 'dataloader' not in cfg:
+        raise KeyError('Missing key "dataloader" in `cfg`', cfg)
+
+    args = deepcopy(cfg)
+    dataset = build_from_cfg(args['dataset'], 'dataset')
+
+    # sampler
+    sampler = None
+    world_size = get_world_size()
+    if world_size > 1:
+        sampler = torch.utils.data.distributed.DistributedSampler(
+            dataset, shuffle=args['dataloader']['shuffle'])
+        args['dataloader']['shuffle'] = False
+
+    # recompute the batch_size for each gpu
+    batch_size = args['dataloader']['batch_size']
+    sample_per_gpu = batch_size // world_size
+    if batch_size % world_size != 0:
+        warnings.warn(f'change batch_size to {sample_per_gpu * world_size}')
+
+    args['dataloader']['dataset'] = dataset
+    args['dataloader']['sampler'] = sampler
+    args['dataloader']['batch_size'] = sample_per_gpu
+    dataloader = build_from_cfg(args['dataloader'], 'torch.utils.data')
+
+    return dataloader
 
 
-def build_module(cfg, module):
-    if 'net' not in cfg:
-        raise KeyError(f'`cfg` must contain the key "net", but got {cfg}')
+def build_module(cfg):
     rank = get_rank()
-    net = build_from_cfg(cfg['net'], module)
-    net = net.to(rank)
+    net = build_from_cfg(cfg, 'model').to(rank)
     net = nn.parallel.DistributedDataParallel(net, device_ids=[rank])
-    if 'pretrained' in cfg:
-        map_location = {'cuda:%d' % 0: 'cuda:%d' % rank}
-        net.load_state_dict(
-                torch.load(cfg['pretrained'], map_location=map_location))
 
-    if 'optimizer' not in cfg:
-        raise KeyError(f'`cfg` must contain the key "optimizer", but got {cfg}')
-    optim_cfg = copy.deepcopy(cfg['optimizer'])
-    optim_cfg['params'] = net.parameters()
-    optimizer = build_from_cfg(optim_cfg, 'torch.optim')
-
-    if 'clip_grad_norm' not in cfg:
-        cfg['clip_grad_norm'] = 1e5
-        warnings.warn('`clip_grad_norm` is not set. The default is 1e5')
-    clip_grad_norm = cfg['clip_grad_norm']
-
-    if 'scheduler' not in cfg:
-        raise KeyError(f'`cfg` must contain the key "scheduler", but got {cfg}')
-    sched_cfg = copy.deepcopy(cfg['scheduler'])
-    sched_cfg['optimizer'] = optimizer
-    scheduler = build_from_cfg(sched_cfg, 'torch.optim.lr_scheduler')
-    
-    return {'net': net, 'clip_grad_norm': clip_grad_norm,
-            'optimizer': optimizer, 'scheduler': scheduler}
-
+    return net
 
 def build_model(cfg):
+    # check
     if 'backbone' not in cfg:
-        raise KeyError(f'`cfg` must contain the key "backbone", but got {cfg}')
+        raise KeyError('Missing key "backbone" in `cfg`', cfg)
     if 'head' not in cfg:
-        raise KeyError(f'`cfg` must contain the key "head", but got {cfg}')
+        raise KeyError('Missing key "head" in `cfg`', cfg)
+    if 'optimizer' not in cfg:
+        raise KeyError('Missing key "optimizer" in `cfg`', cfg)
+    if 'scheduler' not in cfg:
+        raise KeyError('Missing key "scheduler" in `cfg`', cfg)
 
-    model = {}
-    for module in cfg:
-        model[module] = build_module(cfg[module], f'model.{module}')
-    return model
+    args = deepcopy(cfg)
+    backbone = build_module(args['backbone'])
+    head = build_module(args['head'])
+    feat_dim = args['head']['feat_dim']
 
+    args['optimizer']['params'] = [
+        {'params': backbone.parameters()},
+        {'params': head.parameters()},
+    ]
+    optimizer = build_from_cfg(args['optimizer'], 'torch.optim')
+
+    args['scheduler']['optimizer'] = optimizer
+    scheduler = build_from_cfg(
+        args['scheduler'], 'torch.optim.lr_scheduler')
+
+    if 'max_grad_norm' not in args:
+        max_grad_norm = 1e5
+        warnings.warn('Set `max_grad_norm` to 1e5')
+    else:
+        max_grad_norm = args['max_grad_norm']
+
+    return {'backbone': backbone,
+            'head': head,
+            'feat_dim': feat_dim,
+            'optimizer': optimizer,
+            'scheduler': scheduler,
+            'max_grad_norm': max_grad_norm}

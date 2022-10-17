@@ -3,7 +3,6 @@ from .cocoloss import CocoLoss
 from .sphereface import SphereFace
 from .cosface import CosFace
 from .arcface import ArcFace
-from .sphereface2 import SphereFace2
-from .spherefaceplus import SphereFacePlus
-from .gasoftmaxloss import GAsoftmax
-from .spherefacer import SphereFaceR_N, SphereFaceR_H, SphereFaceR_S
+from .sphereface2c import SphereFace2C
+from .sphereface2a import SphereFace2A
+from .sphereface2m import SphereFace2M

@@ -33,7 +33,7 @@ class ClassDataset(Dataset):
             self.data_items.append(item)
 
         if len(self.data_items) == 0:
-            raise (RuntimeError('Found 0 files.'))
+            raise RuntimeError('Found 0 files in {}'.format(self.ann_path))
 
     def corrupt_label(self):
         random.seed(self.seed)
