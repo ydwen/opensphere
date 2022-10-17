@@ -30,3 +30,10 @@ class ArcFace(nn.Module):
         loss = F.cross_entropy(logits, y)
 
         return loss
+
+    def scoring(self, x0, x1, n2m=False):
+        x0 = F.normalize(x0, dim=1)
+        x1 = F.normalize(x1, dim=1)
+        if n2m:
+            return x0.mm(x1.t())
+        return torch.sum(x0 * x1, dim=1)
