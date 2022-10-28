@@ -1,7 +1,6 @@
 # yml for combined validation datasets
 project:
-  proj_dirs:
-  - project/20220312_134759
+  proj_dir: project/20220312_134759
 data:
   test:
   - dataset:
@@ -14,11 +13,14 @@ data:
       - ACC
       - EER
       - AUC
+      - FPR=1e-4
+      - FPR=5e-4
+      - FPR=1e-3
+      - FPR=5e-3
+      - FPR=1e-2
     dataloader:
       type: DataLoader
       batch_size: 256
       shuffle: false
       drop_last: false
       num_workers: 4
-parallel:
-  device_ids: [0, 1]

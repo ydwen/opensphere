@@ -32,5 +32,3 @@ data:
       probe_ann_files:
       - ijbb_1N_probe_mixed.csv
       pair_ann_file: ijbb_template_pair_label.txt
-parallel:
-  device_ids: [0, 1, 2, 3]

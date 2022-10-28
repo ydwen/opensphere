@@ -66,3 +66,4 @@ model:
     type: MultiStepLR
     gamma: 0.1
     milestones: [40000, 60000, 80000]
+  max_grad_norm: 10.0

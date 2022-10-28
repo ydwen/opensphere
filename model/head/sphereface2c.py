@@ -43,12 +43,16 @@ class SphereFace2C(nn.Module):
         cos_theta = F.normalize(x, dim=1).mm(self.w)
         one_hot = torch.zeros_like(cos_theta)
         one_hot.scatter_(1, y.view(-1, 1), 1.)
+        '''
         with torch.no_grad():
             g_cos_theta = 2. * ((cos_theta + 1.) / 2.).pow(self.t) - 1.
             g_cos_theta = g_cos_theta - self.m * (2. * one_hot - 1.)
             d_theta = g_cos_theta - cos_theta
+        '''
+        g_cos_theta = 2. * ((cos_theta + 1.) / 2.).pow(self.t) - 1.
+        g_cos_theta = g_cos_theta - self.m * (2. * one_hot - 1.)
         
-        logits = self.r * (cos_theta + d_theta) + self.b
+        logits = self.r * g_cos_theta + self.b
         weight = self.alpha * one_hot + (1. - self.alpha) * (1. - one_hot)
         weight = self.lw * self.num_class / self.r * weight
         loss = F.binary_cross_entropy_with_logits(

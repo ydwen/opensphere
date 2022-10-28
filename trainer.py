@@ -48,6 +48,7 @@ class Trainer():
         proj_dir = osp.join(proj_cfg['proj_dir'], timestamp)
         self.ckpt_dir = osp.join(proj_dir, 'checkpoint')
         os.makedirs(self.ckpt_dir, exist_ok=True)
+        print(f'saving to {self.ckpt_dir}...')
         # loggers
         train_log_path = osp.join(proj_dir, 'train.log')
         val_log_path = osp.join(proj_dir, 'val.log')
@@ -95,7 +96,7 @@ class Trainer():
     def run(self):
         while self.iter <= self.max_iter:
             # train step
-            if self.iter % self.val_intvl == 0 and self.iter > 0:
+            if self.iter % self.val_intvl == 0:# and self.iter > 0:
                 self.val()
 
             if self.iter in self.save_iters:

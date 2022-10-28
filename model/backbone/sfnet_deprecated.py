@@ -90,6 +90,12 @@ class SFNet_deprecated(nn.Module):
                                        channels[3], layers[3], stride=2)
         self.fc = nn.Linear(channels[3] * 7 * 7, out_channel)
 
+        '''
+        for m in self.modules():
+            if isinstance(m, nn.Conv2d):
+                nn.init.xavier_normal_(m.weight)
+        '''
+
     def _make_layer(self, block: Type[Union[BasicBlock]], inplanes: int,
                     planes: int, blocks: int, stride: int = 1) -> nn.Sequential:
 
