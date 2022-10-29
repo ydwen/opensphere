@@ -9,7 +9,7 @@ class SphereFace2A(nn.Module):
                     for Deep Face Recognition>
     """
     def __init__(self, feat_dim, num_class,
-            alpha=0.7, r=40., m=0.4, t=3., lw=50.):
+            alpha=0.7, r=40., m=0.5, t=3., lw=50.):
         super().__init__()
         self.feat_dim = feat_dim
         self.num_class = num_class
