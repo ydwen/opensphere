@@ -9,16 +9,16 @@ torch.backends.cudnn.benchmark = True
 torch.backends.cudnn.deterministic = True
 
 class OpenSphere():
-    def __init__(self, backbone, head, feat_dim,
+    def __init__(self, backbone, head,
                  optimizer=None, scheduler=None,
                  max_grad_norm=1e5):
         self.backbone = backbone
         self.head = head
-        self.feat_dim = feat_dim
         self.optimizer = optimizer
         self.scheduler = scheduler
         self.max_grad_norm = max_grad_norm
         self.rank = get_rank()
+        self.feat_dim = head.module.feat_dim
 
     def set_mode(self, mode):
         if mode == 'train':

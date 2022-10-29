@@ -48,7 +48,7 @@ class SphereFace2M(nn.Module):
             eps = 1e-8
             m_theta = torch.acos(cos_theta.clamp(-1.+eps, 1.-eps))
             m_theta.scatter_(1, y.view(-1, 1), self.m, reduce='multiply')
-            g_cos_theta = torch.cos(m_theta.clamp_(eps, 3.14159))
+            g_cos_theta = torch.cos(m_theta.clamp_(eps, 3.14))
             g_cos_theta = 2. * ((g_cos_theta + 1.) / 2.).pow(self.t) - 1.
             d_theta = g_cos_theta - cos_theta
         

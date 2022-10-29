@@ -25,7 +25,7 @@ data:
       data_dir: data/train/
       ann_path: data/train/vggface2_train_ann.txt
       test_mode: false
-      noise_ratio: 0.2
+      noise_ratio: 0.6
       seed: 10086
     dataloader: {batch_size: 512, shuffle: true, drop_last: true}
   val:

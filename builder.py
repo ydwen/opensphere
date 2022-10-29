@@ -94,7 +94,6 @@ def build_model(cfg):
     args = deepcopy(cfg)
     backbone = build_module(args['backbone'])
     head = build_module(args['head'])
-    feat_dim = args['head']['feat_dim']
 
     args['optimizer']['params'] = [
         {'params': backbone.parameters()},
@@ -114,7 +113,6 @@ def build_model(cfg):
 
     return {'backbone': backbone,
             'head': head,
-            'feat_dim': feat_dim,
             'optimizer': optimizer,
             'scheduler': scheduler,
             'max_grad_norm': max_grad_norm}
