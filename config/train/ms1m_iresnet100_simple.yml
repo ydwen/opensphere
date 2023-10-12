@@ -1,19 +1,22 @@
 data:
   train:
     dataset:
-      type: ClassDataset
+      type: GroupClassDataset
       name: MS1M
       data_dir: data/train/ms1m_refine/ms1m_refine_112x112
       lst_path: data/train/ms1m_refine/ms1m_refine.lst
+      sample_per_subj: 4
+      unbalance_factor: 0.5
       test_mode: false
       augment_params: {
-        horizontal_flip: true, lowres_prob: 0.,
-        crop_prob: 0., photo_prob: 0.,
+        horizontal_flip: true, lowres_prob: 0.2,
+        crop_prob: 0.2, photo_prob: 0.2,
       }
     dataloader: {
-      type: DataLoader, batch_size: 512,
+      type: DataLoader, batch_size: 128,
       shuffle: true, drop_last: true,
       num_workers: 4, pin_memory: true,
+      sampler: {'type': 'DistributedWeightedSampler', total_size: 1000000},
     }
   val:
   - dataset:
@@ -28,7 +31,7 @@ data:
       ]
     dataloader: {
       type: DataLoader, batch_size: 128,
-      shuffle: false, drop_last: false,
+      shuffle: false, drop_last: false, 
       num_workers: 4, pin_memory: true,
     }
   - dataset:
@@ -51,16 +54,22 @@ model:
     type: iresnet100
     embed_dim: 512
   head:
-    type: SphereFace
-    s: 64
-    m: 1.7
-    feat_dim: -1
-    subj_num: -1
+    type: SimPLE
+    wrap_mode: 'polarlike'
+    b_theta: 0.3
+    alpha: 0.001
+    r: 2.
+    m: 0.
+    lw: 500.
+    init_bias: -10.
 trainer:
-  type: ProxyBasedTrainer
+  type: ProxyFreeTrainer
   # steps, gradient_clip, optimizer, scheduler
   amp: true
+  num_bank: 524288
   max_grad_norm: 100.0
+  encoder_momentum: 0.999
+  shuffle_across_gpus: true
   # steps
   val_intvl: 10000
   ckpt_steps: [60000, 120000, 180000, 240000]
@@ -68,8 +77,10 @@ trainer:
   optimizer:
     type: SGD
     lr: 0.1
+    head_lr: 0.01
     momentum: 0.9
     weight_decay: 0.0005
+    head_wd: 0.0005
   scheduler:
     type: MultiStepLR
     milestones: [80000, 140000, 200000, 240000]

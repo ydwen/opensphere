@@ -51,9 +51,9 @@ model:
     type: iresnet100
     embed_dim: 512
   head:
-    type: SphereFace
+    type: CosFace
     s: 64
-    m: 1.7
+    m: 0.4
     feat_dim: -1
     subj_num: -1
 trainer:

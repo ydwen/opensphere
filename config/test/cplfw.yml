@@ -2,9 +2,9 @@ data:
   test:
   - dataset:
       type: PairDataset
-      name: Combined
+      name: CPLFW
       data_dir: ../opensphere_data/val/
-      ann_path: ../opensphere_data/val/combined_pairs.lst
+      ann_path: ../opensphere_data/val/cplfw_pairs.lst
       test_mode: true
       metrics:
       - ACC
